@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="calendario.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calendar - UI</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="calendar-assets">
+            <h1 id="currentDate"></h1>
+            <div class="field">
+                <label for="date">Pesquisa por data</label>
+                <form class="form-input" id="date-search" onsubmit="return setDate(this)">
+                    <input type="date" class="text-field" name="date" id="date" required>
+                    <button type="submit" class="btn btn-small" title="Pesquisar"><img src="pesquisa.png" alt="" width=40 height=40></button>
+                </form>
+            </div>
+            <div class="day-assets">
+                <button class="btn" onclick="prevDay()" title="Dia anterior"><i class="left"><img src="seta.png" alt="" width=60 height=40></i> </button>
+                <button class="btn" onclick="resetDate()" title="Dia atual"><i class="fas fa-calendar-day"></i> </button>
+                <button class="btn" onclick="nextDay()" title="Próximo dia"><i class="right"><img src="seta.png" alt="" width=60 height=40></i> </button>
+            </div>
+        </div>
+        <div class="calendar" id="table">
+            <div class="header">
+                <!-- Aqui é onde ficará o h1 com o mês e o ano -->
+                <div class="month" id="month-header">
+
+                </div>
+                <div class="buttons">
+                    <button class="icon" onclick="prevMonth()" title="Mês anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button class="icon" onclick="nextMonth()" title="Próximo mês"><i class="fas fa-chevron-right "></i></button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="new-task-container">
+              <input
+                type="text"
+                class="new-task-input"
+                placeholder="Tarefa para ser feita..."
+              />
+              <button class="new-task-button">Adicionar</button>
+            </div>
+            <div class="tasks-container"></div>
+          </div>
+          <script
+            src="https://kit.fontawesome.com/f9e19193d6.js"
+            crossorigin="anonymous"
+          ></script>
+          <script src="./calendario.js"></script>
+    </div>
+    <script src="calendario.js" crossorigin="anonymous"></script>
+</body>
+<footer>
+    Site criado por Gustavo Lorenzo, aluno da PUC-MINAS, do curso de Ciência da Computação
+    <h5><a target="_blank" href="https://icons8.com/icon/12773/pesquisar">Pesquisar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></h5>
+</footer>
+
+</html>
